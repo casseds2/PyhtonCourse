@@ -30,10 +30,20 @@ def closureFuncThree():
 	stringOne = "Hello"
 	return print_string_one
 
+def outer(x):
+	def middle(y):
+		def inner(z):
+			print(x,y,z,a,b)
+		b = "functions"
+		return inner
+	a = "order"
+	return middle
+
 if __name__ == "__main__":
 	closureFuncOne()()
 	closureFuncTwo()()()
 	closureFuncThree()()()()
+	outer("Welcome")("To")("Higher")
 
 '''
 
