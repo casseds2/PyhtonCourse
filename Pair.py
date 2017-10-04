@@ -32,7 +32,6 @@ if __name__ == "__main__":
 	##Both Pairs
 	p1 = Pair(3, 3)
 	p2 = Pair(2, 2)
-	pTemp = Pair(0, 0)
 	print(p1)
 	print(p2)
 
