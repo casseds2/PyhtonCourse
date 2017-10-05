@@ -10,11 +10,7 @@ def flatten(x):
 			yield outer_elem
 		else:
 			for inner in outer_elem:
-				if isinstance(inner, tuple):
-					for t in flatten(inner):
-						yield t
-				else:
-					yield inner
+				yield inner
 
 
 if __name__ == "__main__":
