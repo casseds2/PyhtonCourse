@@ -23,9 +23,13 @@ def monitor(f):
 def deco_square(x=0):
 	return x * x
 
+#@monitor is the exact same as dec_square = monitor(deco_square)
+
 @monitor
 def deco_add_five(x=5, y=0):
 	return x + 5 + y
+
+#@monitor is the exact same as dec_add_five = monitor(deco_add_five)
 
 
 def add_five(x):
