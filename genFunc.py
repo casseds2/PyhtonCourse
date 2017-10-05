@@ -6,8 +6,15 @@ def genFunc(x):
 
 def flatten(x):
 	for outer_elem in x:
-		for inner in outer_elem:
-			yield inner
+		if isinstance(outer_elem, int):
+			yield outer_elem
+		else:
+			for inner in outer_elem:
+				if isinstance(inner, tuple):
+					for t in flatten(inner):
+						yield t
+				else:
+					yield inner
 
 
 if __name__ == "__main__":
@@ -16,7 +23,7 @@ if __name__ == "__main__":
 	#for num in iterable:
 	#	print(num)
 
-	my_tuple = ((0,0), (1,1), (2,2), (3,3))
+	my_tuple = ((0, (5, (6, 6))), (1,1), (2,2), (3,3))
 	data = flatten(my_tuple)
 	for elem in data:
 		print(elem)
